@@ -1,0 +1,85 @@
+* {
+    font-family: Helvetica;
+    box-sizing: border-box;
+  }
+  
+  body {
+  height: 100vh;
+  display: grid;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+
+  } 
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+  }
+
+.players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+  margin: 30px;
+}
+
+#player1 {
+    background-color: yellow;
+    padding: 10px;
+    height: 15vmin;
+    width: 30vmin;
+   
+}
+#player2 {
+    background-color: orange;
+    padding: 10px;
+    height: 15vmin;
+    width: 30vmin;
+    
+}
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(7, 8vmin);
+    grid-template-rows: repeat(6,12vmin);
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1vmin solid grey;
+    background-color: #006400;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    gap: 1vmin;
+    width: 600px;
+    height: 550px;
+    margin-top: -4vmin;
+    padding: 30px
+  }
+
+
+ #player1-pairs, #player2-pairs {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+  
+ .card {
+  width: 100px; 
+  height: 70px; 
+  cursor: pointer;
+  transition: transform 0.5s ease-in;
+  perspective: 1000px;
+  
+}
+.card.flipped {
+  transform: rotateY(180deg);
+  width: 100px; 
+  height: 70px; 
+}
+
+ 
