@@ -68,7 +68,7 @@ h2 {
 }
 
   
- .card {
+ .card { 
   width: 100px; 
   height: 70px; 
   cursor: pointer;
@@ -76,8 +76,8 @@ h2 {
   perspective: 1000px;
   
 }
-.card.flipped {
-  transform: rotateY(180deg);
+.flipped {
+  transform: rotateY(-180deg);
   width: 100px; 
   height: 70px; 
 }
