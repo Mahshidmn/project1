@@ -69,7 +69,6 @@ h2 {
 
   
  .card { 
-  width: 100px; 
   height: 70px; 
   cursor: pointer;
   transition: transform 0.5s ease-in;
@@ -78,8 +77,29 @@ h2 {
 }
 .flipped {
   transform: rotateY(-180deg);
-  width: 100px; 
   height: 70px; 
+}
+
+#winner-message {
+  color: black;
+  font-size: 3vmin;
+  margin: auto;
+}
+
+button {
+ width: 30vmin;
+ height: 15vmin;
+  margin-top: auto;
+  padding: 5%;
+  font-size: 5vmin;
+  border-radius: 5vmin;
+  border: 0.1vmin solid grey;
+  color: grey;
+}
+
+button:hover {
+  color: white;
+  background-color: darkgray;
 }
 
  

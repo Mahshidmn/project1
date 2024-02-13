@@ -1,47 +1,47 @@
 /*----- constants -----*/
 const cards = [
-	{value: 'clubs_4', image: 'images/clubs_4.svg'},
-	{value: 'clubs_6', image: 'images/clubs_6.svg'},
-	{value: 'clubs_7', image: 'images/clubs_7.svg'},
-	{value: 'clubs_king', image: 'images/clubs_king.svg'},
-	{value: 'clubs_queen', image: 'images/clubs_queen.svg'},
-	{value: 'clubs_4', image: 'images/clubs_4.svg'},
-	{value: 'clubs_6', image: 'images/clubs_6.svg'},
-	{value: 'clubs_7', image: 'images/clubs_7.svg'},
-	{value: 'clubs_king', image: 'images/clubs_king.svg'},
-	{value: 'clubs_queen', image: 'images/clubs_queen.svg'},
-	{value: 'diamonds_5', image: 'images/diamonds_5.svg'},
-	{value: 'diamonds_10', image: 'images/diamonds_10.svg'},
-	{value: 'diamonds_jack', image: 'images/diamonds_jack.svg'},
-	{value: 'diamonds_king', image: 'images/diamonds_king.svg'},
-	{value: 'diamonds_queen', image: 'images/diamonds_queen.svg'},
-	{value: 'diamonds_5', image: 'images/diamonds_5.svg'},
-	{value: 'diamonds_10', image: 'images/diamonds_10.svg'},
-	{value: 'diamonds_jack', image: 'images/diamonds_jack.svg'},
-	{value: 'diamonds_king', image: 'images/diamonds_king.svg'},
-	{value: 'diamonds_queen', image: 'images/diamonds_queen.svg'},
-	{value: 'spades_7', image: 'images/spades_7.svg'},
-	{value: 'spades_8', image: 'images/spades_8.svg'},
-	{value: 'spades_ace', image: 'images/spades_ace.svg'},
-	{value: 'spades_jack', image: 'images/spades_jack.svg'},
-	{value: 'spades_king', image: 'images/spades_king.svg'},
-	{value: 'spades_queen', image: 'images/spades_queen.svg'},
-	{value: 'spades_7', image: 'images/spades_7.svg'},
-	{value: 'spades_8', image: 'images/spades_8.svg'},
-	{value: 'spades_ace', image: 'images/spades_ace.svg'},
-	{value: 'spades_jack', image: 'images/spades_jack.svg'},
-	{value: 'spades_king', image: 'images/spades_king.svg'},
-	{value: 'spades_queen', image: 'images/spades_queen.svg'},
-	{value: 'hearts_6', image: 'images/hearts_6.svg'},
-	{value: 'hearts_9', image: 'images/hearts_9.svg'},
-	{value: 'hearts_jack', image: 'images/hearts_jack.svg'},
-	{value: 'hearts_king', image: 'images/hearts_king.svg'},
-	{value: 'hearts_queen', image: 'images/hearts_queen.svg'},
-	{value: 'hearts_6', image: 'images/hearts_6.svg'},
-	{value: 'hearts_9', image: 'images/hearts_9.svg'},
-	{value: 'hearts_jack', image: 'images/hearts_jack.svg'},
-	{value: 'hearts_king', image: 'images/hearts_king.svg'},
-	{value: 'hearts_queen', image: 'images/hearts_queen.svg'}
+	{value: 'clubs_4', image: 'images/clubs_4.svg', matched: false},
+	{value: 'clubs_6', image: 'images/clubs_6.svg', matched: false},
+	{value: 'clubs_7', image: 'images/clubs_7.svg', matched: false},
+	{value: 'clubs_king', image: 'images/clubs_king.svg', matched: false},
+	{value: 'clubs_queen', image: 'images/clubs_queen.svg', matched: false},
+	{value: 'clubs_4', image: 'images/clubs_4.svg', matched: false},
+	{value: 'clubs_6', image: 'images/clubs_6.svg', matched: false},
+	{value: 'clubs_7', image: 'images/clubs_7.svg', matched: false},
+	{value: 'clubs_king', image: 'images/clubs_king.svg', matched: false},
+	{value: 'clubs_queen', image: 'images/clubs_queen.svg', matched: false},
+	{value: 'diamonds_5', image: 'images/diamonds_5.svg', matched: false},
+	{value: 'diamonds_10', image: 'images/diamonds_10.svg', matched: false},
+	{value: 'diamonds_jack', image: 'images/diamonds_jack.svg', matched: false},
+	{value: 'diamonds_king', image: 'images/diamonds_king.svg', matched: false},
+	{value: 'diamonds_queen', image: 'images/diamonds_queen.svg', matched: false},
+	{value: 'diamonds_5', image: 'images/diamonds_5.svg', matched: false},
+	{value: 'diamonds_10', image: 'images/diamonds_10.svg', matched: false},
+	{value: 'diamonds_jack', image: 'images/diamonds_jack.svg', matched: false},
+	{value: 'diamonds_king', image: 'images/diamonds_king.svg', matched: false},
+	{value: 'diamonds_queen', image: 'images/diamonds_queen.svg', matched: false},
+	{value: 'spades_7', image: 'images/spades_7.svg', matched: false},
+	{value: 'spades_8', image: 'images/spades_8.svg', matched: false},
+	{value: 'spades_ace', image: 'images/spades_ace.svg', matched: false},
+	{value: 'spades_jack', image: 'images/spades_jack.svg', matched: false},
+	{value: 'spades_king', image: 'images/spades_king.svg', matched: false},
+	{value: 'spades_queen', image: 'images/spades_queen.svg', matched: false},
+	{value: 'spades_7', image: 'images/spades_7.svg', matched: false},
+	{value: 'spades_8', image: 'images/spades_8.svg', matched: false},
+	{value: 'spades_ace', image: 'images/spades_ace.svg', matched: false},
+	{value: 'spades_jack', image: 'images/spades_jack.svg', matched: false},
+	{value: 'spades_king', image: 'images/spades_king.svg', matched: false},
+	{value: 'spades_queen', image: 'images/spades_queen.svg', matched: false},
+	{value: 'hearts_6', image: 'images/hearts_6.svg', matched: false},
+	{value: 'hearts_9', image: 'images/hearts_9.svg', matched: false},
+	{value: 'hearts_jack', image: 'images/hearts_jack.svg', matched: false},
+	{value: 'hearts_king', image: 'images/hearts_king.svg', matched: false},
+	{value: 'hearts_queen', image: 'images/hearts_queen.svg', matched: false},
+	{value: 'hearts_6', image: 'images/hearts_6.svg', matched: false},
+	{value: 'hearts_9', image: 'images/hearts_9.svg', matched: false},
+	{value: 'hearts_jack', image: 'images/hearts_jack.svg', matched: false},
+	{value: 'hearts_king', image: 'images/hearts_king.svg', matched: false},
+	{value: 'hearts_queen', image: 'images/hearts_queen.svg', matched: false}
 ]
 
 
@@ -50,21 +50,27 @@ const playersObject = {
 	'1': 'player1',
 	'-1': 'player2'
  };
-let firstGuess = null;
-let pairs = {};
-let winner = null;
+let firstGuess;
+let guessAllowed;
+let pairs;
+let matchedCards;
+let winner;
 
 /*----- cached elements  -----*/
 const cardElements =  document.querySelectorAll('.card');
-const player1PairsElement = document.getElementById('player1');
-const player2PairsElement = document.getElementById('player2');
-const messageEl = document.getElementById('winner-message');
+const player1PairsElement = document.getElementById('player1-pairs');
+const player2PairsElement = document.getElementById('player2-pairs');
+const player1PairsContainer = document.getElementById('player1');
+const player2PairsContainer = document.getElementById('player2');
+const messageElement = document.getElementById('winner-message');
+const PlayAgainBtn = document.querySelector('button');
 
 
 /*----- event listeners -----*/
 cardElements.forEach(function(element) {
     element.addEventListener('click', clickHandle);
 });
+PlayAgainBtn.addEventListener('click',init);
 
 // cardElements.forEach(function(element, index) {
 // 	element.addEventListener('click', function () {
@@ -84,7 +90,18 @@ function init () {
 	'player2': 0
 	};
 	turn = 1;	
+	firstGuess = null;
+    guessAllowed = true;
+	matchedCards = 0;
     winner = null;
+
+	cardElements.forEach(function (element, index) {
+		element.setAttribute('src', "images/red.svg");
+	});
+	cards.forEach(function(card) {
+		card.matched = false;
+	});
+	
 	shuffle(cards);
 	render();
 	}
@@ -113,26 +130,34 @@ function clickHandle(event) {
 	  clickedCard.setAttribute('src', cards[cardIndex].image); 	
 	  clickedCard.classList.toggle('flipped');
  	  //console.log(cardIndex);
-		
+	  if (firstGuess === cardIndex || cards[cardIndex].matched === true || guessAllowed === false) {
+		//cardElements[firstGuess].classList.remove('flipped');
+		//cardElements[cardIndex].classList.remove('flipped');
+		alert('invalid guess')
+		return;
+	  }
 	  if (firstGuess === null) {
 			firstGuess = cardIndex;
 			//console.log(cards[firstGuess]);
-			// fix the card, no rotate
 			//console.log(cards[cardIndex]);
 	  } else if (cards[firstGuess].value === cards[cardIndex].value) {
+		    cards[firstGuess].matched = true;
+		    cards[cardIndex].matched = true;
 			firstGuess = null;
 			pairs[playersObject[turn]] += 1;
-					// check for the winner)
-				
+			matchedCards +=2;
+			checkWinner();	
 			turn *= '-1';		
 				
 	  } else { 
+		     guessAllowed = false;
 			 setTimeout (function() {
 			 cardElements[firstGuess].setAttribute('src', 'images/red.svg');
 			 cardElements[cardIndex].setAttribute('src', 'images/red.svg');
 			 cardElements[firstGuess].classList.remove('flipped');
 			 cardElements[cardIndex].classList.remove('flipped');
 			 firstGuess = null;
+			 guessAllowed = true;
 			}, 1500)
 			        
 			 turn *= '-1';
@@ -146,11 +171,11 @@ function render() {
 	
 	//renderDeck();
 	// updates the pairs matched
-	//renderPairs();
+	renderPairs();
 	// the player whose turn is the player pairs box get border and shadow
 	renderTurn();
 	// if there is a winner, pop the message of player1/player2 wins!
-	//renderMessage();
+	renderMessage();
 }
 // the click cards stay fixed (cant be flipped) 
 // if there has been a match,
@@ -159,34 +184,46 @@ function render() {
 	
 
 // }
-// function renderPairs() {
-// 	for (let key in pairs) {
-// 		const pairsElement = document.getElementById(`${key}-pairs`);
-// 		pairsElement.innerText = pairs[key];
-// 	}
-// }
+function renderPairs() {
+	player1PairsElement.innerText = pairs['player1'];
+	player2PairsElement.innerText = pairs['player2'];
+}
 
 function renderTurn () {
    if (turn === 1) {
-       player1PairsElement.style.border = "1vmin solid grey";
-       player1PairsElement.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.7)";
-	   player2PairsElement.style.border = "none";
-	   player2PairsElement.style.boxShadow = "none"; 
+       player1PairsContainer.style.border = "1vmin solid grey";
+       player1PairsContainer.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.7)";
+	   player2PairsContainer.style.border = "none";
+	   player2PairsContainer.style.boxShadow = "none"; 
    } else {
-       player2PairsElement.style.border = "1vmin solid grey";
-       player2PairsElement.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.7)";
-	   player1PairsElement.style.border = "none";
-	   player1PairsElement.style.boxShadow = "none"; 
+       player2PairsContainer.style.border = "1vmin solid grey";
+       player2PairsContainer.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.7)";
+	   player1PairsContainer.style.border = "none";
+	   player1PairsContainer.style.boxShadow = "none"; 
    }
 }
-//function renderMessage () {
-// 	if (winner === '1') {
-// 			messageEl.innerHTML = `${pairs[winner]} wins`;
-// 			console.log(messageEl.innerHTMl);
-// 	}
-//}
-//function getWinner () {
+
+function checkWinner () {
 	// if there is no more unclicked cards, then:
-	// if player1 pairs > player2 pairs => player1 wins 
-	// else player 2 wins
-//}
+if (matchedCards === cards.length) {
+	if (pairs['player1'] > pairs['player2']) {
+		  winner = 'player1';	
+	} else {
+		winner = 'player2';
+	}
+	}
+return;
+}
+function renderMessage () {
+	if (winner !== null) {
+	messageElement.innerHTML = `${winner} wins!`;
+	
+	}
+}
+
+//TODO:
+//1.after card being clicked or match, if i click on them, 
+//it still flip and come bck to front
+//2. flip direction doesnt show the right view of card
+//3. check and debug messageElement to be rendered on the page
+//. css styling
