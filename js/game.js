@@ -47,8 +47,8 @@ const cards = [
 
 /*----- state variables -----*/
 const playersObject = {
-	'1': 'player1',
-	'-1': 'player2'
+	'1': 'Player1',
+	'-1': 'Player2'
  };
 let firstGuess;
 let guessAllowed;
@@ -64,6 +64,7 @@ const player1PairsContainer = document.getElementById('player1');
 const player2PairsContainer = document.getElementById('player2');
 const messageElement = document.getElementById('winner-message');
 const PlayAgainBtn = document.querySelector('button');
+
 
 
 /*----- event listeners -----*/
@@ -86,8 +87,8 @@ init();
 
 function init () {
 	pairs = {
-	'player1': 0,
-	'player2': 0
+	'Player1': 0,
+	'Player2': 0
 	};
 	turn = 1;	
 	firstGuess = null;
@@ -126,44 +127,47 @@ function shuffle(array) {
 
 function clickHandle(event) {
   let clickedCard = event.target;
-  let cardIndex = Array.from(cardElements).indexOf(clickedCard); // Get the index of the clicked card
-	  clickedCard.setAttribute('src', cards[cardIndex].image); 	
-	  clickedCard.classList.toggle('flipped');
+  let cardIndex = Array.from(cardElements).indexOf(clickedCard);
+ // Get the index of the clicked card
+
+ //??? how can i get the right picture not the mirrored image
+ /// the next two lines first change the attribute of the clicked card
+// back of the card and then rotate 180 dg which mirrors the card contents
+ clickedCard.setAttribute('src', cards[cardIndex].image); 	
+ clickedCard.classList.toggle('flipped');
  	  //console.log(cardIndex);
+ //???? why although i have gaurd the cards which have these conditions after alert the card flip
 	  if (firstGuess === cardIndex || cards[cardIndex].matched === true || guessAllowed === false) {
-		//cardElements[firstGuess].classList.remove('flipped');
-		//cardElements[cardIndex].classList.remove('flipped');
-		alert('invalid guess')
-		return;
-	  }
-	  if (firstGuess === null) {
-			firstGuess = cardIndex;
-			//console.log(cards[firstGuess]);
-			//console.log(cards[cardIndex]);
-	  } else if (cards[firstGuess].value === cards[cardIndex].value) {
-		    cards[firstGuess].matched = true;
-		    cards[cardIndex].matched = true;
-			firstGuess = null;
-			pairs[playersObject[turn]] += 1;
-			matchedCards +=2;
-			checkWinner();	
-			turn *= '-1';		
+	alert('invalid guess')
+	return;
+ }
+if (firstGuess === null) {
+	firstGuess = cardIndex;
+	//console.log(cards[firstGuess]);
+	//console.log(cards[cardIndex]);
+} else if (cards[firstGuess].value === cards[cardIndex].value) {
+		cards[firstGuess].matched = true;
+		cards[cardIndex].matched = true;
+		firstGuess = null;
+		pairs[playersObject[turn]] += 1;
+		matchedCards += 2;
+		turn *= '-1';
+		winner = checkWinner();	
+		render();	
 				
-	  } else { 
-		     guessAllowed = false;
-			 setTimeout (function() {
-			 cardElements[firstGuess].setAttribute('src', 'images/red.svg');
-			 cardElements[cardIndex].setAttribute('src', 'images/red.svg');
-			 cardElements[firstGuess].classList.remove('flipped');
-			 cardElements[cardIndex].classList.remove('flipped');
-			 firstGuess = null;
-			 guessAllowed = true;
-			}, 1500)
-			        
-			 turn *= '-1';
+	 } else { 
+	    guessAllowed = false;
+		setTimeout (function() {
+	    cardElements[firstGuess].setAttribute('src', 'images/red.svg');
+		cardElements[cardIndex].setAttribute('src', 'images/red.svg');
+		cardElements[firstGuess].classList.remove('flipped');
+		cardElements[cardIndex].classList.remove('flipped');
+		firstGuess = null;
+		guessAllowed = true;
+		}, 1500)        
+		turn *= '-1';
 		    }
-			
-			render();
+		render();
 }
 
 
@@ -176,7 +180,9 @@ function render() {
 	renderTurn();
 	// if there is a winner, pop the message of player1/player2 wins!
 	renderMessage();
+	
 }
+
 // the click cards stay fixed (cant be flipped) 
 // if there has been a match,
 // keep the matched cards, they should stay fixed and inctivate them by bluring them
@@ -185,8 +191,8 @@ function render() {
 
 // }
 function renderPairs() {
-	player1PairsElement.innerText = pairs['player1'];
-	player2PairsElement.innerText = pairs['player2'];
+	player1PairsElement.innerText = pairs['Player1'];
+	player2PairsElement.innerText = pairs['Player2'];
 }
 
 function renderTurn () {
@@ -203,27 +209,31 @@ function renderTurn () {
    }
 }
 
-function checkWinner () {
+function checkWinner() {
 	// if there is no more unclicked cards, then:
 if (matchedCards === cards.length) {
-	if (pairs['player1'] > pairs['player2']) {
-		  winner = 'player1';	
+	if (pairs['Player1'] > pairs['Player2']) {
+		  return 'Player1';	
 	} else {
-		winner = 'player2';
+		return 'Player2';
 	}
 	}
 return;
 }
-function renderMessage () {
-	if (winner !== null) {
-	messageElement.innerHTML = `${winner} wins!`;
-	
+function renderMessage() {
+	//if (winner !== null) {
+	//messageElement.innerHTML = `${winner} Wins!`;
+	messageElement.innerHTML = winner ? `${winner} Wins!`: null;
+	messageElement.style.visibility = winner ? 'visible': 'hidden';
 	}
-}
+
+
+
 
 //TODO:
 //1.after card being clicked or match, if i click on them, 
 //it still flip and come bck to front
 //2. flip direction doesnt show the right view of card
-//3. check and debug messageElement to be rendered on the page
+//3. check messageElement to be rendered on the page
 //. css styling
+// renderBoard()??

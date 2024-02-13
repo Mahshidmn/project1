@@ -8,20 +8,29 @@
   display: grid;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
+  background-color: green;
 
   } 
+
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
 
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 28px;
   }
 
 .players {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+   
 }
 
 h2 {
@@ -29,17 +38,28 @@ h2 {
 }
 
 #player1 {
-    background-color: yellow;
+    background-color: navy;
+    border-radius: 12px;
     padding: 10px;
-    height: 15vmin;
+    height: 12vmin;
     width: 30vmin;
+    font-size: 3vmin;
+    margin: auto;
+    padding: 15px;
+    color: white;
    
 }
 #player2 {
-    background-color: orange;
+    background-color: purple;
+    border-radius: 12px;
     padding: 10px;
-    height: 15vmin;
+    height: 12vmin;
     width: 30vmin;
+    font-size: 3vmin;
+    margin: auto;
+    padding: 15px;
+    color: white;
+   
     
 }
 
@@ -50,18 +70,19 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: 1vmin solid grey;
-    background-color: #006400;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    gap: 1vmin;
+    /*border: 1vmin solid grey;
+    /*background-color: #006400;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);*/
     width: 600px;
     height: 550px;
-    margin-top: -4vmin;
-    padding: 30px
+    margin-top: -7vmin;
+    padding: 30px;
+    row-gap: 0;
+    column-gap: 0.8vmin;
   }
 
 
- #player1-pairs, #player2-pairs {
+ #player1-pairs, #player2-pairs, #winner-message {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -69,37 +90,58 @@ h2 {
 
   
  .card { 
-  height: 70px; 
+  height: 75px; 
   cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
   transition: transform 0.5s ease-in;
   perspective: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   
 }
+/*.card_front,
+.card_back {
+   position: absolute;
+   backface-visibility: hidden;
+}*/
+
 .flipped {
   transform: rotateY(-180deg);
   height: 70px; 
 }
 
+
 #winner-message {
-  color: black;
-  font-size: 3vmin;
-  margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 30vmin;
+height: 7vmin;
+margin: auto;
+padding: 2vmin;
+font-size: 3vmin;
+border-radius: 5vmin;
+border: 0.3vmin solid black;
+color: black;
+background-color: yellow;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+
 }
 
 button {
- width: 30vmin;
- height: 15vmin;
-  margin-top: auto;
-  padding: 5%;
-  font-size: 5vmin;
-  border-radius: 5vmin;
-  border: 0.1vmin solid grey;
-  color: grey;
+width: 20vmin;
+height: 7vmin;
+margin: auto;
+padding: 2vmin;
+font-size: 3vmin;
+border-radius: 5vmin;
+border: 0.3vmin solid grey;
+color: grey;
 }
 
 button:hover {
   color: white;
-  background-color: darkgray;
+  background-color: lightgreen;
 }
 
  
