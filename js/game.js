@@ -131,6 +131,10 @@ function clickHandle(event) {
 	alert('invalid guess')
 	return;
  }
+//  cardElements.innerHTML = <><div class="front">
+// 	 <img class="front-image" src $ {...cards[cardIndex].image} />
+//  </div><div class="back"></div></>
+ clickedCard.classList.add('front', 'back');
  clickedCard.setAttribute('src', cards[cardIndex].image); 
  clickedCard.classList.toggle('flipped');
 if (firstGuess === null) {
