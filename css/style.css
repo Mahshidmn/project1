@@ -4,7 +4,8 @@
   }
   
   body {
-  height: 100vh;
+    min-height: 100vh;
+    min-width: 100vh;
   display: grid;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
@@ -19,11 +20,11 @@
   }
 
   h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
   }
+  
 
 .players {
     display: flex;

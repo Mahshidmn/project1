@@ -124,27 +124,20 @@ function shuffle(array) {
   return array;
 }
 
-
 function clickHandle(event) {
   let clickedCard = event.target;
   let cardIndex = Array.from(cardElements).indexOf(clickedCard);
- // Get the index of the clicked card
-
- //??? how can i get the right picture not the mirrored image
- /// the next two lines first change the attribute of the clicked card
-// back of the card and then rotate 180 dg which mirrors the card contents
- clickedCard.setAttribute('src', cards[cardIndex].image); 	
- clickedCard.classList.toggle('flipped');
- 	  //console.log(cardIndex);
- //???? why although i have gaurd the cards which have these conditions after alert the card flip
-	  if (firstGuess === cardIndex || cards[cardIndex].matched === true || guessAllowed === false) {
+	  if (clickedCard.classList.contains('flipped') || cards[cardIndex].matched === true || guessAllowed === false) {
 	alert('invalid guess')
 	return;
  }
+ clickedCard.setAttribute('src', cards[cardIndex].image); 
+ clickedCard.classList.toggle('flipped');
 if (firstGuess === null) {
 	firstGuess = cardIndex;
 	//console.log(cards[firstGuess]);
 	//console.log(cards[cardIndex]);
+	
 } else if (cards[firstGuess].value === cards[cardIndex].value) {
 		cards[firstGuess].matched = true;
 		cards[cardIndex].matched = true;
@@ -164,12 +157,11 @@ if (firstGuess === null) {
 		cardElements[cardIndex].classList.remove('flipped');
 		firstGuess = null;
 		guessAllowed = true;
-		}, 1500)        
+		}, 1000)        
 		turn *= '-1';
 		    }
 		render();
 }
-
 
 function render() {
 	
@@ -221,8 +213,6 @@ if (matchedCards === cards.length) {
 return;
 }
 function renderMessage() {
-	//if (winner !== null) {
-	//messageElement.innerHTML = `${winner} Wins!`;
 	messageElement.innerHTML = winner ? `${winner} Wins!`: null;
 	messageElement.style.visibility = winner ? 'visible': 'hidden';
 	}
@@ -234,6 +224,5 @@ function renderMessage() {
 //1.after card being clicked or match, if i click on them, 
 //it still flip and come bck to front
 //2. flip direction doesnt show the right view of card
-//3. check messageElement to be rendered on the page
 //. css styling
 // renderBoard()??
