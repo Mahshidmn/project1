@@ -1,4 +1,5 @@
 /*----- constants -----*/
+const AUDIO = new Audio('sound/Card-flip-sound-effect.mp3');
 const cards = [
 	{value: 'clubs_4', image: 'images/clubs_4.svg', matched: false},
 	{value: 'clubs_6', image: 'images/clubs_6.svg', matched: false},
@@ -73,14 +74,6 @@ cardElements.forEach(function(element) {
 });
 PlayAgainBtn.addEventListener('click',init);
 
-// cardElements.forEach(function(element, index) {
-// 	element.addEventListener('click', function () {
-// 		let clickedCard = cardElements[index];
-// 		let cardIndex = Array.from(cardElements).indexOf(clickedCard); // Get the index of the clicked card
-// 		clickedCard.setAttribute('src', cards[cardIndex].image); 
-// 		clickedCard.classList.toggle('flipped');
-// 	})
-// 	})
 
 /*----- functions -----*/
 init();
@@ -110,14 +103,13 @@ function init () {
 function shuffle(array) {
   let currentIndex = array.length;
   let randomIndex;
-  // While there remain elements to shuffle.
   while (currentIndex > 0) {
 
-    // Pick a remaining element.
+    // Pick a random index.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    // And swap it with the current element.
+    // And swap the random element with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
@@ -127,22 +119,20 @@ function shuffle(array) {
 function clickHandle(event) {
   let clickedCard = event.target;
   let cardIndex = Array.from(cardElements).indexOf(clickedCard);
+  // Gaurd
 	  if (clickedCard.classList.contains('flipped') || cards[cardIndex].matched === true || guessAllowed === false) {
 	alert('invalid guess')
 	return;
  }
-//  cardElements.innerHTML = <><div class="front">
-// 	 <img class="front-image" src $ {...cards[cardIndex].image} />
-//  </div><div class="back"></div></>
- clickedCard.classList.add('front', 'back');
+ AUDIO.currentTime = 0;
+ AUDIO.play();
  clickedCard.setAttribute('src', cards[cardIndex].image); 
  clickedCard.classList.toggle('flipped');
-if (firstGuess === null) {
+ // First cliked card
+  if (firstGuess === null) {
 	firstGuess = cardIndex;
-	//console.log(cards[firstGuess]);
-	//console.log(cards[cardIndex]);
-	
-} else if (cards[firstGuess].value === cards[cardIndex].value) {
+ // There is matched cards
+  } else if (cards[firstGuess].value === cards[cardIndex].value) {
 		cards[firstGuess].matched = true;
 		cards[cardIndex].matched = true;
 		firstGuess = null;
@@ -151,7 +141,7 @@ if (firstGuess === null) {
 		turn *= '-1';
 		winner = checkWinner();	
 		render();	
-				
+  // There is no matched cards		
 	 } else { 
 	    guessAllowed = false;
 		setTimeout (function() {
@@ -168,24 +158,15 @@ if (firstGuess === null) {
 }
 
 function render() {
-	
-	//renderDeck();
-	// updates the pairs matched
+	// updates the pairs matched foe each player
 	renderPairs();
-	// the player whose turn is the player pairs box get border and shadow
+	// update the player pairs box with border and shadow based on turns 
 	renderTurn();
-	// if there is a winner, pop the message of player1/player2 wins!
+	// if there is a winner, make the winner message of player1/player2 wins! visible
 	renderMessage();
 	
 }
 
-// the click cards stay fixed (cant be flipped) 
-// if there has been a match,
-// keep the matched cards, they should stay fixed and inctivate them by bluring them
-// function renderDeck () {
-	
-
-// }
 function renderPairs() {
 	player1PairsElement.innerText = pairs['Player1'];
 	player2PairsElement.innerText = pairs['Player2'];
@@ -221,12 +202,3 @@ function renderMessage() {
 	messageElement.style.visibility = winner ? 'visible': 'hidden';
 	}
 
-
-
-
-//TODO:
-//1.after card being clicked or match, if i click on them, 
-//it still flip and come bck to front
-//2. flip direction doesnt show the right view of card
-//. css styling
-// renderBoard()??
