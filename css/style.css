@@ -11,14 +11,13 @@
 
   } 
 
-  header {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-bottom: 0;
-
-  }
+  } 
 
   h1 {
     text-align: center;
@@ -43,9 +42,9 @@
 
 .players {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: auto;
 }
 
 h2 {
@@ -84,11 +83,6 @@ h2 {
     grid-template-rows: repeat(6,12vmin);
     justify-content: center;
     align-items: center;
-    /*border: 1vmin solid grey;
-    /*background-color: #006400;*/
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);*/
-    /* width: 600px;
-    height: 550px; */
     margin: auto;
     margin-top: -5vmin;
     padding: 30px;
@@ -118,43 +112,43 @@ h2 {
 
 
 .flipped {
-transform: rotateY(360deg);
-height: 55px; 
+  transform: rotateY(360deg);
+  height: 55px; 
 }
 
 .actions {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 } 
 
 #winner-message {
-width: 30vmin;
-height: 7vmin;
-margin: auto;
-padding: 2vmin;
-font-size: 3vmin;
-border-radius: 5vmin;
-border: 0.3vmin solid black;
-color: black;
-background-color: yellow;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  width: 30vmin;
+  height: 7vmin;
+  margin: auto;
+  padding: 2vmin;
+  font-size: 3vmin;
+  border-radius: 4vmin;
+  border: 0.3vmin solid grey;
+  color: black;
+  background-color: yellow;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 
 }
 
 button {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 20vmin;
-height: 7vmin;
-margin: auto;
-padding: 2vmin;
-font-size: 3vmin;
-border-radius: 5vmin;
-border: 0.3vmin solid grey;
-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vmin;
+  height: 7vmin;
+  margin: auto;
+  padding: 2vmin;
+  font-size: 3vmin;
+  border-radius: 5vmin;
+  border: 0.3vmin solid grey;
+  color: grey;
 }
 
 button:hover {
@@ -162,15 +156,27 @@ button:hover {
   background-color: #27ae60;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
 
-  .players {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto;
+.players {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   text-align: center;
+  } 
+  
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(7, 6vmin);
+  grid-template-rows: repeat(6, 9.5vmin);
+} 
+
+.card { 
+  height: 70px; 
 }
-
-} */
-
+ 
+.flipped {
+  transform: rotateY(360deg);
+  height: 70px; 
+}
 
