@@ -79,26 +79,26 @@ PlayAgainBtn.addEventListener('click',init);
 init();
 
 function init () {
-	pairs = {
-	'Player1': 0,
-	'Player2': 0
-	};
-	turn = 1;	
-	firstGuess = null;
-    guessAllowed = true;
-	matchedCards = 0;
-    winner = null;
+  pairs = {
+  'Player1': 0,
+  'Player2': 0
+  };
+  turn = 1;	
+  firstGuess = null;
+  guessAllowed = true;
+  matchedCards = 0;
+  winner = null;
 
-	cardElements.forEach(function (element, index) {
-		element.setAttribute('src', "images/red.svg");
-	});
-	cards.forEach(function(card) {
-		card.matched = false;
-	});
+  cardElements.forEach(function (element, index) {
+    element.setAttribute('src', "images/red.svg");
+  });
+  cards.forEach(function(card) {
+    card.matched = false;
+  });
 	
-	shuffle(cards);
-	render();
-	}
+  shuffle(cards);
+  render();
+}
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -121,9 +121,9 @@ function clickHandle(event) {
   let cardIndex = Array.from(cardElements).indexOf(clickedCard);
   // Gaurd
 	  if (clickedCard.classList.contains('flipped') || cards[cardIndex].matched === true || guessAllowed === false) {
-	alert('invalid guess')
-	return;
- }
+	   alert('invalid guess')
+	  return;
+     }
  AUDIO.currentTime = 0;
  AUDIO.play();
  clickedCard.setAttribute('src', cards[cardIndex].image); 
@@ -159,17 +159,17 @@ function clickHandle(event) {
 
 function render() {
 	// updates the pairs matched foe each player
-	renderPairs();
+  renderPairs();
 	// update the player pairs box with border and shadow based on turns 
-	renderTurn();
+  renderTurn();
 	// if there is a winner, make the winner message of player1/player2 wins! visible
-	renderMessage();
+  renderMessage();
 	
 }
 
 function renderPairs() {
-	player1PairsElement.innerText = pairs['Player1'];
-	player2PairsElement.innerText = pairs['Player2'];
+  player1PairsElement.innerText = pairs['Player1'];
+  player2PairsElement.innerText = pairs['Player2'];
 }
 
 function renderTurn () {
@@ -188,17 +188,17 @@ function renderTurn () {
 
 function checkWinner() {
 	// if there is no more unclicked cards, then:
-if (matchedCards === cards.length) {
-	if (pairs['Player1'] > pairs['Player2']) {
+   if (matchedCards === cards.length) {
+	   if (pairs['Player1'] > pairs['Player2']) {
 		  return 'Player1';	
-	} else {
-		return 'Player2';
-	}
-	}
-return;
+	   } else {
+		  return 'Player2';
+	   }
+	   }
+       return;
 }
 function renderMessage() {
-	messageElement.innerHTML = winner ? `${winner} Wins!`: null;
-	messageElement.style.visibility = winner ? 'visible': 'hidden';
-	}
+   messageElement.innerHTML = winner ? `${winner} Wins!`: null;
+   messageElement.style.visibility = winner ? 'visible': 'hidden';
+}
 
