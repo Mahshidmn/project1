@@ -2,6 +2,9 @@
 
 Concentration is a round game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.
 
+## Getting Started:
+
+Click [here](https://mahshidmn.github.io/project1/) to play the game.
 
 ## Game Features:
 
@@ -14,13 +17,10 @@ Concentration is a round game in which all of the cards are laid face down on a 
 - Match pairs of cards with the same symbols.
 - The game ends when all pairs are matched.
 
-## Getting Started:
 
-Click [here](https://mahshidmn.github.io/project1/) to play the game.
+## Game View:
 
-## Screenshot:
-
-![Concentration Card Game](images/game-screenshot.png)
+![Concentration Card Game](images/game-scrshot.png)
 
 ## Technologies Used:
 - HTML
