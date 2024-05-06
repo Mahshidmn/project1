@@ -25,4 +25,12 @@ Click [here](https://mahshidmn.github.io/project1/) to play the game.
 ## Technologies Used:
 - HTML
 - CSS
-- JavaScript
+- Vanilla JS
+- Mobile Responsiveness
+
+## Version 1.2 Improvements:
+- Improve the visibility of the cards
+- Remove Alrets
+- Add some difficulties and a timer to allow some replayability
+- Add some instructions on the screen as a toggle
+-Add a middle query responsiveness
